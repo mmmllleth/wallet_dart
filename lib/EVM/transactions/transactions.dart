@@ -1,7 +1,6 @@
 import 'dart:convert';
 import '../../constant/constant.dart';
 import 'package:http/http.dart' as http;
-import '../chains/chains.dart';
 import 'models/model.dart';
 
 class Transactions {
@@ -28,7 +27,7 @@ class Transactions {
     required String address,
     required EvmChain chain,
   }) async {
-    final String chainName = EvmChainHelper.getChainName(chaintype: chain);
+    final String chainName = chain.code;
     try {
       final response = await _fetch(address, parameters: {"chain": chainName});
       final responseData = jsonDecode(response.body);
@@ -40,7 +39,7 @@ class Transactions {
         if (responseData is Map<String, dynamic>) {
           final apiResponse = ApiResponse.fromJson(responseData);
           final transactions = apiResponse.result;
-          if (transactions != null && transactions.isNotEmpty) {
+          if (transactions.isNotEmpty) {
             return transactions;
           }
         }

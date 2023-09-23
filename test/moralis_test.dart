@@ -1,6 +1,4 @@
 import 'package:flutter_test/flutter_test.dart';
-import 'package:moralis/EVM/chains/chains.dart';
-import 'package:moralis/EVM/transactions/models/model.dart';
 import 'package:moralis/moralis.dart';
 
 void main() {

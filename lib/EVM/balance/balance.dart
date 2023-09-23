@@ -1,7 +1,6 @@
 import 'dart:convert';
 import '../../constant/constant.dart';
 import 'package:http/http.dart' as http;
-import '../chains/chains.dart';
 
 class Balance {
   final _client = http.Client();
@@ -28,10 +27,10 @@ class Balance {
     required String address,
   }) async {
     const int divideby = 1000000000000000000;
-    final String chainn = EvmChainHelper.getChainName(chaintype: chain);
+    final String chainName = chain.code;
     try {
       final response =
-          await _fetch("$address/balance", parameters: {"chain": chainn});
+          await _fetch("$address/balance", parameters: {"chain": chainName});
       final resData = jsonDecode(response.body);
       Constants.logger.d(resData);
       if (response.statusCode != 200) {
@@ -51,9 +50,9 @@ class Balance {
     required EvmChain chain,
     required List<String> addresses,
   }) async {
-    final String chainn = EvmChainHelper.getChainName(chaintype: chain);
+    final String chainName = chain.code;
     final Map<String, String> parameters = {
-      "chain": chainn,
+      "chain": chainName,
       for (var address in addresses) "wallet_addresses": address,
     };
     try {

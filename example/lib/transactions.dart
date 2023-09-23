@@ -1,6 +1,6 @@
 // Get Transactions of a wallet address
 import 'package:flutter/material.dart';
-import 'package:moralis/EVM/chains/chains.dart';
+import 'package:moralis/constant/constant.dart';
 import 'package:moralis/EVM/transactions/models/model.dart';
 import 'package:moralis/moralis.dart';
 
