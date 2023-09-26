@@ -1,5 +1,5 @@
 import 'package:flutter_test/flutter_test.dart';
-import 'package:moralis/moralis.dart';
+import 'package:wallet_dart/moralis.dart';
 
 void main() {
   test('moralis test', () async {

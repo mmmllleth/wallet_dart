@@ -1,8 +1,8 @@
 // Get Transactions of a wallet address
 import 'package:flutter/material.dart';
-import 'package:moralis/constant/constant.dart';
-import 'package:moralis/EVM/transactions/models/model.dart';
-import 'package:moralis/moralis.dart';
+import 'package:wallet_dart/constant/constant.dart';
+import 'package:wallet_dart/EVM/transactions/models/model.dart';
+import 'package:wallet_dart/moralis.dart';
 
 class TransactionList extends StatelessWidget {
   final String walletAddress;
