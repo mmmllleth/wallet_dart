@@ -5,6 +5,10 @@ import 'package:http/http.dart' as http;
 class Token {
   final _client = http.Client();
 
+  final String owner;
+
+  Token({required this.owner});
+
   Future<http.Response> _fetch(
     String endpoint, {
     Map<String, String>? headers,
@@ -22,12 +26,20 @@ class Token {
     );
   }
 
-  getTokenBalance({required String address, required EvmChain chain}) async {
+  getTokens({required EvmChain chain}) async {
     final response =
-        await _fetch("$address/erc20", parameters: {"chain": chain.code});
+        await _fetch("$owner/erc20", parameters: {"chain": chain.code});
     final resData = jsonDecode(response.body);
 
-    print("response $resData");
+    return resData;
+  }
+
+  getTokenBalance({required String token, required EvmChain chain}) async {
+    final response = await _fetch("$owner/erc20", parameters: {
+      "chain": chain.code,
+      "token_addresses[]": token,
+    });
+    final List resData = jsonDecode(response.body);
     return resData;
   }
 }

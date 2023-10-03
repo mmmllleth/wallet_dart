@@ -15,15 +15,18 @@ enum EvmChain {
   sepolia('sepolia', 1),
   polygon('polygon', 1),
   mumbai('mumbai', 1),
-  bsc('bsc', 1),
-  bsctestnet('bsc testnet', 1),
+  bsc('bsc', 56),
+  bsctestnet('bsc testnet', 97),
   avalanche('avalanche', 1),
   fantom('fantom', 1),
   cronos('cronos', 1),
   palm('palm', 1),
   arbitrum('arbitrum', 1);
 
+  /// morails chain name
   final String code;
+
+  /// chain ID
   final int id;
 
   const EvmChain(this.code, this.id);
