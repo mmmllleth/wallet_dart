@@ -5,7 +5,7 @@ import 'package:http/http.dart' as http;
 class Token {
   final _client = http.Client();
 
-  final String owner;
+  String owner;
 
   Token({required this.owner});
 

@@ -8,20 +8,20 @@ class Constants {
 
 enum EvmChain {
   ethereum('ethereum', 1),
-  ropsten('ropsten', 1),
-  rinkeby('rinkeby', 1),
-  goerli('goerli', 1),
-  kovan('kovan', 1),
-  sepolia('sepolia', 1),
-  polygon('polygon', 1),
-  mumbai('mumbai', 1),
+  ropsten('ropsten', 3),
+  rinkeby('rinkeby', 4),
+  goerli('goerli', 5),
+  kovan('kovan', 69),
+  sepolia('sepolia', 11155111),
+  polygon('polygon', 137),
+  mumbai('mumbai', 80001),
   bsc('bsc', 56),
   bsctestnet('bsc testnet', 97),
-  avalanche('avalanche', 1),
-  fantom('fantom', 1),
-  cronos('cronos', 1),
-  palm('palm', 1),
-  arbitrum('arbitrum', 1);
+  avalanche('avalanche', 43114),
+  fantom('fantom', 250),
+  cronos('cronos', 25),
+  palm('palm', 11297108109),
+  arbitrum('42161', 1);
 
   /// morails chain name
   final String code;
