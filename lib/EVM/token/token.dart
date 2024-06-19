@@ -34,6 +34,14 @@ class Token {
     return resData;
   }
 
+  getNfts({required EvmChain chain}) async {
+    final response = await _fetch("$owner/nft",
+        parameters: {"chain": chain.code, "normalizeMetadata": "true"});
+    final resData = jsonDecode(response.body);
+
+    return resData;
+  }
+
   getTokenBalance({required String token, required EvmChain chain}) async {
     final response = await _fetch("$owner/erc20", parameters: {
       "chain": chain.code,
