@@ -39,7 +39,7 @@ class Token {
         parameters: {"chain": chain.code, "normalizeMetadata": "true"});
     final resData = jsonDecode(response.body);
 
-    return resData;
+    return resData['result'];
   }
 
   getTokenBalance({required String token, required EvmChain chain}) async {
